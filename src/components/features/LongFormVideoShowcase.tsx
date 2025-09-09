@@ -10,13 +10,17 @@ const VideoCard = ({ video }: VideoCardProps) => {
   return (
     <div className="group relative bg-zinc-900 rounded-xl overflow-hidden">
       {/* Video Container */}
-      <div className="relative aspect-video overflow-hidden">
+      <div className="relative w-full overflow-hidden rounded-xl" style={{ paddingBottom: '56.25%' }}>
         <iframe
           src={video.url}
-          className="w-full h-full"
+          className="absolute top-0 left-0 w-full h-full border-0"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
           allowFullScreen
+          style={{ 
+            objectFit: 'contain',
+            backgroundColor: '#000'
+          }}
         />
       </div>
     </div>
