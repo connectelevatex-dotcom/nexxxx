@@ -79,17 +79,13 @@ export const VideoCarousel = () => {
               <div className="carousel-set flex-shrink-0 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {videos.map((video) => (
                   <div key={video.id} className="video-card group">
-                    <div className="relative bg-zinc-900 rounded-lg overflow-hidden max-w-[280px] sm:max-w-[320px] mx-auto video-container-vertical">
+                    <div className="relative bg-zinc-900 rounded-lg overflow-hidden max-w-[280px] sm:max-w-[320px] mx-auto aspect-[9/16]">
                       <iframe
                         src={video.url}
-                        className="absolute top-0 left-0 w-full h-full border-0 video-iframe"
+                        className="absolute top-0 left-0 w-full h-full border-0 object-cover"
                         frameBorder="0"
                         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                         allowFullScreen
-                        style={{ 
-                          objectFit: 'contain',
-                          backgroundColor: '#000'
-                        }}
                       />
                     </div>
                   </div>
@@ -120,17 +116,13 @@ export const VideoCarousel = () => {
           {/* Mobile Single Video Display */}
           <div className="relative">
             <div className="video-card group">
-              <div className="relative bg-zinc-900 rounded-lg overflow-hidden video-container-vertical">
+              <div className="relative bg-zinc-900 rounded-lg overflow-hidden aspect-[9/16]">
                 <iframe
                   src={videos[currentMobileVideo].url}
-                  className="absolute top-0 left-0 w-full h-full border-0 video-iframe"
+                  className="absolute top-0 left-0 w-full h-full border-0 object-cover"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                   allowFullScreen
-                  style={{ 
-                    objectFit: 'contain',
-                    backgroundColor: '#000'
-                  }}
                 />
               </div>
             </div>

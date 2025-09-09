@@ -79,7 +79,7 @@ export const ThumbnailShowcase = () => {
         <div className="flex flex-col lg:flex-row gap-8 items-center">
           {/* Video Frame Area */}
           <div className="w-full lg:w-1/2 relative group">
-            <div className="relative max-w-[640px] mx-auto bg-zinc-900 rounded-xl overflow-hidden video-container-horizontal">
+            <div className="relative max-w-[640px] mx-auto bg-zinc-900 rounded-xl overflow-hidden aspect-video">
               <iframe
                 key={currentIndex}
                 src={currentThumbnail.videoSrc}
@@ -88,11 +88,7 @@ export const ThumbnailShowcase = () => {
                 height="480"
                 allow="autoplay; picture-in-picture"
                 allowFullScreen
-                className="absolute top-0 left-0 w-full h-full border-0 video-iframe transition-opacity duration-500 ease-in-out"
-                style={{ 
-                  objectFit: 'contain',
-                  backgroundColor: '#000'
-                }}
+                className="absolute top-0 left-0 w-full h-full border-0 object-cover transition-opacity duration-500 ease-in-out"
               ></iframe>
 
               {/* Navigation Buttons */}
